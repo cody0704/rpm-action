@@ -22,9 +22,9 @@ inputs:
     description: 'RPM version'
   rpm_requires:
     description: 'RPM requires'
-  script:
+  reponstiry:
     description: 'Git pull to rpm path'
-    default: "git clone https://github.com/${{ github.repository }} /root/rpmbuild/SOURCES/"
+    default: "https://github.com/${{ github.repository }}"
 runs:
   using: 'docker'
   image: 'Dockerfile'
