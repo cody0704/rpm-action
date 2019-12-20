@@ -1,0 +1,30 @@
+name: 'Container Auto RPM'
+description: 'Executing rpm packaging'
+author: 'CodyChen'
+inputs:
+  project_name: 
+    description: 'Supporting project name'
+  packaging_path:
+    description: 'RPM Packaging Services Location'
+  packager:
+    description: 'PRM Packager'
+  rpm_path:
+    description: 'Specify RPM packaging path'
+  rpm_name:
+    description: 'RPM name'
+  rpm_url:
+    description: 'RPM url'
+  rpm_vendor:
+    description: 'RPM vendor'
+  rpm_apiname:
+    description: 'RPM api name'
+  rpm_version:
+    description: 'RPM version'
+  rpm_requires:
+    description: 'RPM requires'
+  script:
+    description: 'Git pull to rpm path'
+    default: "git clone https://github.com/${{ github.repository }} /root/rpmbuild/SOURCES/"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
